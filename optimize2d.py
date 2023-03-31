@@ -12,8 +12,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import minimize
 
 # Define the 3D function to plot
-def f(x):
-    return (2*x[0])**2 + x[1]**2 + 2
+def f(xy):
+    return (2*xy[0])**2 + xy[1]**2 + 2
 
 # Create a meshgrid of x and y values
 x = np.linspace(-10, 10, 20)
@@ -30,17 +30,17 @@ ax.plot_surface(X, Y, Z, cmap='viridis')
 
 # Find the minimum of the function using the minimize function from SciPy
 x0 = [0, 0] # Initial guess for the minimum
-res = minimize(f, x0)
-print(f"Minimum found at x = {res.x[0]}, y = {res.x[1]}, z = {f(res.x)}" )
+optimize = minimize(f, x0)
+print(f"Minimum found at x = {optimize.x[0]}, y = {optimize.x[1]}, z = {f(optimize.x)}" )
 
 # Plot the minimum as a red dot
-ax.scatter(res.x[0], res.x[1], f(res.x), c='red', s=50)
+ax.scatter(optimize.x[0], optimize.x[1], f(optimize.x), c='red', s=50)
 
 # Set the axis labels and title
 ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('f(x,y)')
-ax.set_title(f"Minimum found at x = {res.x[0]}, y = {res.x[1]}, z = {f(res.x)}")
+ax.set_title(f"Minimum found at x = {optimize.x[0]}, y = {optimize.x[1]}, z = {f(optimize.x)}")
 
 # Show the plot
 plt.show()
