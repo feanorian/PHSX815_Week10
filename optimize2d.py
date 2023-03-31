@@ -17,7 +17,7 @@ Z = f([X, Y])
 
 # Plot the function as a 3D surface
 fig = plt.figure()
-ax = fig.gca(projection='3d')
+ax = fig.add_subplots(projection='3d')
 ax.plot_surface(X, Y, Z, cmap='viridis')
 
 # Find the minimum of the function using the minimize function from SciPy
