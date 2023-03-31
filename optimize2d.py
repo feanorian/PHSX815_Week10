@@ -26,7 +26,7 @@ res = minimize(f, x0)
 print(f"Minimum found at x = {res.x[0]}, y = {res.x[1]}, z = {f(res.x)}" )
 
 # Plot the minimum as a red dot
-ax.scatter(res.x[0], res.x[1], f(res.x), c='orange', s=50)
+ax.scatter(res.x[0], res.x[1], f(res.x), c='red', s=50)
 
 # Set the axis labels and title
 ax.set_xlabel('x')
