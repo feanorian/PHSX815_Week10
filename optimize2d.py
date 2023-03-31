@@ -1,3 +1,11 @@
+"""
+Name: Craig Brooks
+PHSX 815 Spring 2023
+HW # 10
+Due Date 3/30/2023
+This code optimizes a pre-defined 2D function using the minimize method from scipy.optimize
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
