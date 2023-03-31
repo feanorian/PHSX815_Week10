@@ -34,11 +34,5 @@ ax.set_ylabel('y')
 ax.set_zlabel('f(x,y)')
 ax.set_title(f"Minimum found at x = {res.x[0]}, y = {res.x[1]}, z = {f(res.x)}")
 
-for angle in range(0, 360):
-    ax.view_init(100, angle)
-    plt.draw()
-    plt.pause(.001)
-
-
 # Show the plot
 plt.show()
